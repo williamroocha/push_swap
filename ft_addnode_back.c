@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_addnode_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/07 07:41:31 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/08 08:24:38 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/08 08:26:22 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_addnode_back(t_stack_node **head, t_stack_node *node)
 {
-	int				i;
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack_node	*last;
 
-	i = 0;
-	a = NULL;
-	b = NULL;
-	if (ac < 2)
-		return (0);
-	while (av[i])
+	if (!node)
+		return ;
+	if (!*head)
 	{
-		i++;
+		*head = node;
+		return ;
 	}
-	return (0);
+	last = *head;
+	while (last->next)
+		last = last->next;
+	last->next = node;
+	node->prev = last;
 }

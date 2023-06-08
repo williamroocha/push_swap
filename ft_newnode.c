@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_newnode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/07 07:41:31 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/08 08:11:03 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/08 08:14:20 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+t_stack_node	*ft_newnode(int nbr)
 {
-	int				i;
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack_node	*node;
 
-	i = 0;
-	a = NULL;
-	b = NULL;
-	if (ac < 2)
-		return (0);
-	while (av[i])
-	{
-		i++;
-	}
-	return (0);
+	node = (t_stack_node *)malloc(sizeof(t_stack_node));
+	if (!node)
+		return (NULL);
+	node->nbr = nbr;
+	node->prev = NULL;
+	node->next = NULL;
+	return (node);
 }
