@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/09 08:49:23 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/12 09:48:44 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_stack_init(int ac, char **av)
 		nbr = ft_atoi(av[i]);
 		newnode = ft_newnode(nbr);
 		ft_addnode_back(&stack_a, newnode);
+		/*Print the value of each node*/
+		printf("node value: %d\n", newnode->nbr);
 		i++;
 	}
 	return (0);

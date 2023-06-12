@@ -6,17 +6,16 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/09 08:45:21 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/12 09:51:19 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <limits.h>
-# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 /*Struct Node*/
 
@@ -33,7 +32,7 @@ int						main(int ac, char **av);
 
 /*stack_node functions*/
 
-ft_stack_init(int ac, char **av);
+int						ft_stack_init(int ac, char **av);
 t_stack_node			*ft_newnode(int nbr);
 void					ft_addnode_back(t_stack_node **head,
 							t_stack_node *node);
