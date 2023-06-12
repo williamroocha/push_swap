@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/12 11:51:33 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/12 11:42:03 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/12 11:45:34 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	stack_size(t_stack_node *stack)
 {
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	int				size;
+	t_stack_node	*current;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (ac < 2)
-		return (0);
-	ft_stack_init(ac, av, &stack_a);
-	if (a_is_sorted(stack_a))
-		return (0);
-	printf("Size of stack A: %d\n", stack_size(stack_a));
-	return (0);
+	size = 0;
+	current = stack;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
 }
