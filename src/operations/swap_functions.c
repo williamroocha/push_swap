@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allowed_operations.c                               :+:      :+:    :+:   */
+/*   swap_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 13:09:26 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/12 13:10:40 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/13 09:52:59 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/13 09:59:00 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
+
+// sa (swap a) : Swap the top two numbers in A
 
 void	sa(t_stack_node **stack_a)
 {
+	int	temp;
+
 	if (*stack_a && (*stack_a)->next)
-		ft_swap(&(*stack_a)->nbr, &(*stack_a)->next->nbr);
+	{
+		temp = (*stack_a)->nbr;
+		(*stack_a)->nbr = (*stack_a)->next->nbr;
+		(*stack_a)->next->nbr = temp;
+	}
 }
+
+// sb (swap b) : Swap the top two numbers in B
 
 void	sb(t_stack_node **stack_b)
 {
+	int	temp;
+
 	if (*stack_b && (*stack_b)->next)
-		ft_swap(&(*stack_b)->nbr, &(*stack_b)->next->nbr);
+	{
+		temp = (*stack_b)->nbr;
+		(*stack_b)->nbr = (*stack_b)->next->nbr;
+		(*stack_b)->next->nbr = temp;
+	}
 }
+
+// ss : sa and sb at the same time
 
 void	ss(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
-}
-
-void	pa(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	if (*stack_b)
-		ft_push(stack_b, stack_a);
-}
-
-void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	if (*stack_a)
-		ft_push(stack_a, stack_b);
 }

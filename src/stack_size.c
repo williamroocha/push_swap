@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   stack_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 13:26:33 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/12 13:30:01 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/12 11:42:03 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/13 08:38:46 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_stack_node **stack)
+int	stack_size(t_stack_node *stack)
 {
-	int	temp;
+	int				size;
+	t_stack_node	*current;
 
-	if (*stack && (*stack)->next)
+	size = 0;
+	current = stack;
+	while (current != NULL)
 	{
-		temp = (*stack)->nbr;
-		(*stack)->nbr = (*stack)->next->nbr;
-		(*stack)->next->nbr = temp;
+		size++;
+		current = current->next;
 	}
+	return (size - 1);
 }
