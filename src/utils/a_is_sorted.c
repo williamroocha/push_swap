@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:37:13 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 09:15:26 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:08:53 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ bool	a_is_sorted(t_stack_node *stack_a)
 	}
 	return (true);
 }
+
+// Path: src/utils/a_is_sorted.c

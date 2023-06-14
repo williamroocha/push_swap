@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 09:17:06 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:15:05 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ void	ft_stack_init(int ac, char **av, t_stack_node **stack_a)
 		av++;
 	}
 }
+
+// Path: src/utils/ft_stack_init.c

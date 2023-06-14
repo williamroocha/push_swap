@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:14:44 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/13 10:16:14 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:18:53 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,5 @@ void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 		*stack_b = top;
 	}
 }
+
+// Path: src/operations/push_functions.c

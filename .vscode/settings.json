@@ -3,5 +3,12 @@
         "push_swap.h": "c",
         "limits.h": "c"
     },
-    "editor.indentSize": "tabSize"
+    "editor.indentSize": "tabSize",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/william/Desktop/workspace/push_swap",
+            "binaryPath": "/home/william/Desktop/workspace/push_swap/push_swap",
+            "binaryArgs": []
+        }
+    ]
 }

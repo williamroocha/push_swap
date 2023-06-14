@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 09:52:59 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/13 09:59:00 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:20:19 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,5 @@ void	ss(t_stack_node **stack_a, t_stack_node **stack_b)
 	sa(stack_a);
 	sb(stack_b);
 }
+
+// Path: src/operations/swap_functions.c

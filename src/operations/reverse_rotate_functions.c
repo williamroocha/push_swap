@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:08:51 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/13 10:12:59 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:21:04 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,5 @@ void	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 	rra(stack_a);
 	rrb(stack_b);
 }
+
+// Path: src/operations/reverse_rotate_functions.c

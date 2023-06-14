@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:58:20 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 09:17:06 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:14:37 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,5 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
+// Path: src/utils/ft_atoi.c

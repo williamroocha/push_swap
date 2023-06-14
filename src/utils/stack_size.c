@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 11:42:03 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 09:16:30 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:15:14 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,5 @@ int	stack_size(t_stack_node *stack)
 	}
 	return (size - 1);
 }
+
+// Path: src/utils/stack_size.c

@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 09:42:11 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:15:22 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,5 @@ int	main(int ac, char **av)
 	printf("Size of stack A: %d\n", stack_size(stack_a));
 	return (0);
 }
+
+// Path: src/push_swap.c
