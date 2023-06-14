@@ -6,11 +6,11 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:37:13 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/12 10:45:37 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 09:15:26 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 bool	a_is_sorted(t_stack_node *stack_a)
 {

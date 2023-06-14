@@ -6,11 +6,11 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 11:42:03 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/13 08:38:46 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 09:16:30 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	stack_size(t_stack_node *stack)
 {

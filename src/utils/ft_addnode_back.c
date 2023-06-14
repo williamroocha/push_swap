@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_addnode_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 08:11:03 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/08 08:14:20 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/08 08:24:38 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/14 09:17:06 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-t_stack_node	*ft_newnode(int nbr)
+void	ft_addnode_back(t_stack_node **head, t_stack_node *node)
 {
-	t_stack_node	*node;
+	t_stack_node	*last;
 
-	node = (t_stack_node *)malloc(sizeof(t_stack_node));
 	if (!node)
-		return (NULL);
-	node->nbr = nbr;
-	node->prev = NULL;
-	node->next = NULL;
-	return (node);
+		return ;
+	if (!*head)
+	{
+		*head = node;
+		return ;
+	}
+	last = *head;
+	while (last->next)
+		last = last->next;
+	last->next = node;
+	node->prev = last;
 }
