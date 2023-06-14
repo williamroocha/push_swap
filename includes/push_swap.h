@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/13 10:18:05 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:14:56 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ int						main(int ac, char **av);
 
 // Stack_node functions
 
-void					ft_stack_init(int ac, char **av,
+void					ft_stack_init(char **av,
 							t_stack_node **stack_a);
 t_stack_node			*ft_newnode(int nbr);
 void					ft_addnode_back(t_stack_node **head,
 							t_stack_node *node);
 int						stack_size(t_stack_node *stack);
 bool					a_is_sorted(t_stack_node *stack_a);
+void					print_list(t_stack_node *head);
 
 // Allowed operations
 
@@ -58,6 +59,8 @@ void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
 // Sort Algorithms
 
 void					sort_three_numbers(t_stack_node **stack_a);
+void					sort_five_numbers(t_stack_node **stack_a,
+							t_stack_node **stack_b);
 
 // Libft functions
 

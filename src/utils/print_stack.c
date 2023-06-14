@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 11:40:46 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/14 18:29:32 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+void	print_stack(t_stack_node **stack_a)
 {
-	t_stack_node	*newnode;
+	t_stack_node	*current;
 
-	while (*av)
+	current = *stack_a;
+	while (current != NULL)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		ft_putnbr_fd(current->nbr, 1);
+		ft_putstr_fd(" ", 1);
+		current = current->next;
 	}
+	ft_putstr_fd("\n", 1);
 }
-
-// Path: src/utils/ft_stack_init.c

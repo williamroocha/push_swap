@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   sort_five_numbers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 11:40:46 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/14 16:44:46 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/14 16:53:38 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+// Step 1: Move top two numbers from Stack A to Stack B.
+// Step 2-3: Sort the remaining three numbers in Stack A
+// Step 4-6: Move numbers from Stack B back to Stack A
+void	sort_five_numbers(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node	*newnode;
-
-	while (*av)
-	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
-	}
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	sort_three_numbers(stack_a);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }
 
-// Path: src/utils/ft_stack_init.c
+// Path: src/sort/sort_five_numbers.c

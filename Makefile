@@ -4,21 +4,20 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = src/operations/push_functions.c
-	src/operations/rotate_functions.c
-	src/operations/swap_functions.c
-	src/operations/reverse_rotate_functions.c
-	src/sort/sort_three_numbers.c
-	src/sort/sort_five_numbers.c
-	src/sort/sort_hundred_numbers.c
-	src/sort/sort_five_hundred_numbers.c
-	src/utils/a_is_sorted.c
-	src/utils/ft_addnode_back.c
-	src/utils/ft_newnode.c
-	src/utils/ft_atoi.c
-	src/utils/ft_stack_init.c
-	src/utils/ft_stack_size.c
-	src/push_swap.c\
+SRC = src/operations/push_functions.c\
+	src/operations/rotate_functions.c\
+	src/operations/swap_functions.c\
+	src/operations/reverse_rotate_functions.c\
+	src/sort/sort_three_numbers.c\
+	src/sort/sort_five_numbers.c\
+	src/utils/a_is_sorted.c\
+	src/utils/ft_addnode_back.c\
+	src/utils/ft_newnode.c\
+	src/utils/ft_atoi.c\
+	src/utils/ft_stack_init.c\
+	src/utils/stack_size.c\
+	src/utils/print_stack.c\
+	src/push_swap.c
 
 OBJ = $(SRC:.c=.o)
 
