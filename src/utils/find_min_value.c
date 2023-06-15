@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   find_min_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/15 09:42:59 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/15 09:57:26 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/15 09:58:57 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+int	find_min_value(t_stack_node *stack)
 {
-	t_stack_node	*newnode;
+	int	min;
 
-	av++;
-	while (*av)
+	min = stack->nbr;
+	while (stack)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		if (stack->nbr < min)
+			min = stack->nbr;
+		stack = stack->next;
 	}
+	return (min);
 }
-
-// Path: src/utils/ft_stack_init.c

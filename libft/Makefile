@@ -8,16 +8,17 @@ SOURCEFILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			  ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 			  ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 
-OBJECTS = $(SOURCEFILES:.c=.o)
+OBJECTS = $(patsubst %.c,obj/%.o,$(SOURCEFILES))
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 			ft_lstclear.c ft_lstiter.c ft_lstmap.c
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
+OBJ_BONUS = $(patsubst %.c,obj/%.o,$(SRC_BONUS))
 
 NAME = libft.a
 
 COMPILER = cc
 
+AR = ar
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror
 
@@ -26,18 +27,24 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME) bonus
 
 $(NAME): $(OBJECTS)
-	$(AR) rcs $(NAME) $(OBJECTS)
+	@$(AR) rcs $(NAME) $(OBJECTS)
+	@echo "libft compiled"
 
 bonus: $(OBJ_BONUS)
-	$(AR) rcs $(NAME) $(OBJ_BONUS)
+	@$(AR) rcs $(NAME) $(OBJ_BONUS)
 
-%.o: %.c
-	$(COMPILER) $(FLAGS) -c $< -o $@
+obj/%.o: %.c | obj
+	@$(COMPILER) $(FLAGS) -c $< -o $@
+
+obj:
+	@mkdir -p obj
 
 clean:
-	$(RM) $(OBJECTS) $(OBJ_BONUS)
+	@$(RM) $(OBJECTS) $(OBJ_BONUS)
+	@echo "libft object files removed"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "libft removed"
 
 re: fclean all

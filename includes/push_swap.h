@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 21:28:10 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/15 10:39:59 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void					ft_addnode_back(t_stack_node **head,
 int						stack_size(t_stack_node *stack);
 bool					a_is_sorted(t_stack_node *stack_a);
 void					print_stack(t_stack_node *head);
+int						find_min_value(t_stack_node *stack);
+int						find_max_value(t_stack_node *stack);
 
 // Allowed operations
 

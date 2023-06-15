@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   find_max_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/15 09:42:59 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/15 10:38:42 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/15 10:39:21 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+int	find_max_value(t_stack_node *stack)
 {
-	t_stack_node	*newnode;
+	int	max;
 
-	av++;
-	while (*av)
+	max = stack->nbr;
+	while (stack)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		if (stack->nbr > max)
+			max = stack->nbr;
+		stack = stack->next;
 	}
+	return (max);
 }
-
-// Path: src/utils/ft_stack_init.c
