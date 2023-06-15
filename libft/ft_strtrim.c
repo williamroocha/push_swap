@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 20:52:03 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/18 10:04:52 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/18 10:10:09 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	t_stack_node	*newnode;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	while (*av)
-	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
-	}
+	if (!s1 && !set)
+		return (NULL);
+	i = 0;
+	j = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while (s1[j - 1] && ft_strchr(set, s1[j - 1]) && j > i)
+		j--;
+	str = (char *)malloc(sizeof(char) * (j - i + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, &s1[i], j - i + 1);
+	return (str);
 }
-
-// Path: src/utils/ft_stack_init.c

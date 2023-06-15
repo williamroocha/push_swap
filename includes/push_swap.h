@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 18:14:56 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:28:10 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 // Struct Node
 
@@ -40,7 +41,7 @@ void					ft_addnode_back(t_stack_node **head,
 							t_stack_node *node);
 int						stack_size(t_stack_node *stack);
 bool					a_is_sorted(t_stack_node *stack_a);
-void					print_list(t_stack_node *head);
+void					print_stack(t_stack_node *head);
 
 // Allowed operations
 
@@ -61,9 +62,5 @@ void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
 void					sort_three_numbers(t_stack_node **stack_a);
 void					sort_five_numbers(t_stack_node **stack_a,
 							t_stack_node **stack_b);
-
-// Libft functions
-
-int						ft_atoi(const char *str);
 
 #endif

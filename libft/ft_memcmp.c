@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 20:52:03 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/14 13:41:02 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/17 14:30:06 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_stack_node	*newnode;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
-	while (*av)
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		if (str1[i] != str2[i])
+			return ((str1[i]) - (str2[i]));
+		i++;
 	}
+	return (0);
 }
-
-// Path: src/utils/ft_stack_init.c

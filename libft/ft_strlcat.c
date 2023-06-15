@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 20:52:03 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/14 09:50:30 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/17 17:05:33 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-// Fill the stack_A with the numbers from the arguments
+#include "libft.h"
 
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	t_stack_node	*newnode;
+	size_t	i;
+	size_t	j;
+	size_t	lend;
+	size_t	lens;
 
-	while (*av)
+	j = 0;
+	lend = ft_strlen(dest);
+	i = lend;
+	lens = ft_strlen(src);
+	if (size < 1 || size < lend)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		return (lens + size);
 	}
+	while (src[j] && i < size - 1)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (lend + lens);
 }
-
-// Path: src/utils/ft_stack_init.c

@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_init.c                                    :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 20:52:03 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/17 18:14:30 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/17 18:32:31 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-// Fill the stack_A with the numbers from the arguments
-
-void	ft_stack_init(char **av, t_stack_node **stack_a)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_stack_node	*newnode;
+	size_t	i;
+	char	*str;
 
-	while (*av)
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (len + start >= ft_strlen(s))
+		len = ft_strlen(s) - start;
+	if (start > ft_strlen(s))
+		len = 0;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	while (i < len)
 	{
-		newnode = ft_newnode(ft_atoi(*av));
-		ft_addnode_back(stack_a, newnode);
-		av++;
+		str[i] = s[start + i];
+		i++;
 	}
+	str[i] = '\0';
+	return (str);
 }
-
-// Path: src/utils/ft_stack_init.c

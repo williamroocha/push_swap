@@ -4,38 +4,41 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = src/operations/push_functions.c\
-	src/operations/rotate_functions.c\
-	src/operations/swap_functions.c\
-	src/operations/reverse_rotate_functions.c\
-	src/sort/sort_three_numbers.c\
-	src/sort/sort_five_numbers.c\
-	src/utils/a_is_sorted.c\
-	src/utils/ft_addnode_back.c\
-	src/utils/ft_newnode.c\
-	src/utils/ft_atoi.c\
-	src/utils/ft_stack_init.c\
-	src/utils/stack_size.c\
-	src/utils/print_stack.c\
-	src/push_swap.c
+SRC_DIR = src
+OBJ_DIR = obj
 
-OBJ = $(SRC:.c=.o)
+SRC = $(wildcard $(SRC_DIR)/operations/*.c) \
+	$(wildcard $(SRC_DIR)/sort/*.c) \
+	$(wildcard $(SRC_DIR)/utils/*.c) \
+	$(SRC_DIR)/push_swap.c
+
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+
+LIBFT_DIR = ./libft
+LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT_INC = $(LIBFT_DIR)/libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(LIBFT)
+	@$(CC) $(FLAGS) $(OBJ) -L$(LIBFT_DIR) -lft -o $(NAME)
 	@echo "push_swap compiled"
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT_INC)
+	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@
 
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory
+
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) clean --no-print-directory
 	@echo "push_swap object files removed"
 
 fclean: clean
 	@rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean --no-print-directory
 	@echo "push_swap removed"
 
 re: fclean all

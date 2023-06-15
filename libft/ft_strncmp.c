@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 11:49:00 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 18:34:57 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/14 13:20:55 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/14 15:49:32 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_putstr(char *str)
+int	ft_strncmp(const char *s1, char *s2, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*s1 != '\0' && *s1 == *s2 && n > 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
+	if (n == 0)
+	{
+		return (0);
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

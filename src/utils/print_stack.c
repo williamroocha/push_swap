@@ -6,17 +6,17 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 18:29:32 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:28:18 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack_node **stack_a)
+void	print_stack(t_stack_node *stack_a)
 {
 	t_stack_node	*current;
 
-	current = *stack_a;
+	current = stack_a;
 	while (current != NULL)
 	{
 		ft_putnbr_fd(current->nbr, 1);

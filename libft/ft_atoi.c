@@ -5,39 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 07:58:20 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 11:14:37 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/04/13 18:39:12 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/04/17 14:27:50 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	result;
 	int	i;
 	int	sign;
+	int	result;
 
+	i = 0;
 	sign = 1;
 	result = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-		{
-			sign = -1;
-		}
+		sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (str[i] == '+')
+		i++;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		result *= 10;
+		result += str[i] - '0';
 		i++;
 	}
 	return (result * sign);
 }
-
-// Path: src/utils/ft_atoi.c
