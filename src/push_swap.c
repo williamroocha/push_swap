@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/16 15:58:36 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:15:31 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	main(int ac, char **av)
 		ft_putstr_fd("List is already sorted\n", 1);
 		return (0);
 	}
-	if (stack_size(stack_a) == 3)
-		sort_three_numbers(&stack_a);
-	else if (stack_size(stack_a) == 5)
-		sort_five_numbers(&stack_a, &stack_b);
+	if (stack_size(stack_a) <= 5)
+		sort_small_stack(&stack_a, &stack_b);
+	else
+		sort_big_stack(&stack_a, &stack_b);
 	ft_putstr_fd("List after sorting:\n", 1);
 	print_stack(stack_a);
 	return (0);

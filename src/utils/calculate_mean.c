@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   calculate_mean.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/20 11:48:59 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/20 10:50:50 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/06/20 12:35:00 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack_node *stack)
+int	calculate_mean(t_stack_node *stack)
 {
+	int				sum;
+	int				count;
 	t_stack_node	*current;
 
+	sum = 0;
+	count = 0;
 	current = stack;
-	while (current != NULL)
+	while (current)
 	{
-		ft_putnbr_fd(current->nbr, 1);
-		ft_putstr_fd(" ", 1);
+		sum += current->nbr;
+		count++;
 		current = current->next;
 	}
-	ft_putstr_fd("\n", 1);
+	if (count == 0)
+		return (0);
+	return (sum / count);
 }
-
-// Path: src/utils/print_stack.c
