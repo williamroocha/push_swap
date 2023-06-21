@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 13:17:42 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/21 17:09:57 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }						t_stack_node;
 
+typedef struct s_stack
+{
+	int					i;
+	int					index_bf;
+	int					cost_bf;
+	int					cost_nb;
+	int					best;
+	int					final_bf;
+	int					final_nb;
+	int					index_nb;
+	int					size_b;
+	int					size_a;
+	t_stack_node		*temp;
+}						t_stack;
+
 // Push_Swap functions
 
 int						main(int ac, char **av);
@@ -48,6 +63,7 @@ int						calculate_mean(t_stack_node *stack);
 int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
+int						calculate_cost(int size, int i);
 
 // Allowed operations
 
