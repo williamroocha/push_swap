@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/20 16:15:31 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/21 11:46:43 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	ft_stack_init(av, &stack_a);
-	ft_putstr_fd("List before sorting:\n", 1);
-	print_stack(stack_a);
 	if (a_is_sorted(stack_a))
 	{
 		ft_putstr_fd("List is already sorted\n", 1);
@@ -33,8 +31,6 @@ int	main(int ac, char **av)
 		sort_small_stack(&stack_a, &stack_b);
 	else
 		sort_big_stack(&stack_a, &stack_b);
-	ft_putstr_fd("List after sorting:\n", 1);
-	print_stack(stack_a);
 	return (0);
 }
 

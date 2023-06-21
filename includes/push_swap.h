@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/20 17:01:46 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:17:42 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ void					print_stack(t_stack_node *stack);
 int						find_min_value(t_stack_node *stack);
 int						find_max_value(t_stack_node *stack);
 int						calculate_mean(t_stack_node *stack);
+int						get_index(t_stack_node *stack, int nbr);
+void					put_top_a(t_stack_node **stack_a, int i);
+void					put_top_b(t_stack_node **stack_b, int i);
 
 // Allowed operations
 
@@ -60,6 +63,12 @@ void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 void					pa(t_stack_node **stack_a, t_stack_node **stack_b);
 void					pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
+// Auxiliary operation functions
+
+void					reverse_rotate(t_stack_node **stack);
+void					rotate(t_stack_node **stack);
+void					swap(t_stack_node **stack);
+
 // Sort Algorithms
 
 void					sort_small_stack(t_stack_node **stack_a,
@@ -67,17 +76,9 @@ void					sort_small_stack(t_stack_node **stack_a,
 void					sort_three_numbers(t_stack_node **stack_a);
 void					sort_four_numbers(t_stack_node **stack_a,
 							t_stack_node **stack_b);
-void					brute_compare(t_stack_node **stack_a,
-							t_stack_node **stack_b);
 void					sort_five_numbers(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					sort_big_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
-
-// Brute moves for sort_small_stack
-
-void					case_1(t_stack_node **stack_a, t_stack_node **stack_b);
-void					case_2(t_stack_node **stack_a, t_stack_node **stack_b);
-void					case_3(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif

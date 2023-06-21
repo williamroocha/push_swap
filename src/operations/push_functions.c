@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:14:44 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 12:42:22 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/21 11:41:01 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	pa(t_stack_node **stack_a, t_stack_node **stack_b)
 		top->prev = NULL;
 		*stack_a = top;
 	}
+	ft_putstr_fd("pa\n", 1);
 }
 
 // pb (push b) : Top number in A goes to top of B
@@ -50,6 +51,7 @@ void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 		top->prev = NULL;
 		*stack_b = top;
 	}
+	ft_putstr_fd("pb\n", 1);
 }
 
 // Path: src/operations/push_functions.c
