@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 17:09:57 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/06/28 21:29:32 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,15 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }						t_stack_node;
 
-typedef struct s_stack
+// Struct to store stack info
+
+typedef struct s_stack_info
 {
-	int					i;
-	int					index_bf;
-	int					cost_bf;
-	int					cost_nb;
-	int					best;
-	int					final_bf;
-	int					final_nb;
-	int					index_nb;
-	int					size_b;
-	int					size_a;
-	t_stack_node		*temp;
-}						t_stack;
+	int					number;
+	int					best_buddy;
+	int					moves_to_top;
+	int					buddy_moves_to_top;
+}						t_stack_info;
 
 // Push_Swap functions
 
@@ -64,6 +59,11 @@ int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
 int						calculate_cost(int size, int i);
+
+// Stack_info functions
+
+void					ft_stack_info_init(t_stack_info **stack_info,
+							int number);
 
 // Allowed operations
 
@@ -96,5 +96,7 @@ void					sort_five_numbers(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					sort_big_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
+void					find_best_buddy(t_stack_node **stack_a,
+							t_stack_node **stack_b, t_stack_info **stack_info);
 
 #endif

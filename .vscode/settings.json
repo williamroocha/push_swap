@@ -12,5 +12,8 @@
             "binaryPath": "/home/william/Desktop/workspace/push_swap/push_swap",
             "binaryArgs": []
         }
-    ]
+    ],
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "cmake.sourceDirectory": "/home/william/Desktop/workspace/push_swap/push_swap_visualizer",
+    "cmake.configureOnOpen": true
 }
