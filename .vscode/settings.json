@@ -3,7 +3,9 @@
         "push_swap.h": "c",
         "limits.h": "c",
         "random": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "chrono": "c",
+        "variant": "c"
     },
     "editor.indentSize": "tabSize",
     "makefile.launchConfigurations": [
