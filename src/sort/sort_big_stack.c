@@ -6,20 +6,28 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:00:14 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/03 16:51:06 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/04 08:51:09 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+void	print_node_info(t_node_info info)
+{
+	printf("Number: %d\n", info.number);
+	printf("Index: %d\n", info.index);
+	printf("Best Buddy: %d\n", info.best_buddy);
+	printf("Best Buddy Index: %d\n", info.best_buddy_index);
+	printf("Moves to Top: %d\n", info.moves_to_top);
+	printf("Buddy Moves to Top: %d\n", info.buddy_moves_to_top);
+	printf("Cost: %d\n", info.cost);
+}
+
 void	sort_big_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int			mean;
-	int			nbr;
-	int			bf;
 	t_node_info	*info;
 
-	info = (t_node_info *)malloc(sizeof(t_node_info));
 	while (stack_size(*stack_a) > 3)
 	{
 		mean = calculate_mean(*stack_a);
@@ -29,14 +37,10 @@ void	sort_big_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 			ra(stack_a);
 	}
 	sort_three_numbers(stack_a);
-	*info = choose_node(stack_a, stack_b);
 	while (stack_size(*stack_b) > 0)
 	{
-		nbr = find_b(*stack_b, *info);
-		bf = find_a(*stack_a, *info);
-		put_top_a(stack_a, get_index(*stack_a, bf));
-		put_top_b(stack_b, get_index(*stack_b, nbr));
+		info = choose_node(stack_a, stack_b);
 		pa(stack_a, stack_b);
+		free(info);
 	}
-	free(info);
 }

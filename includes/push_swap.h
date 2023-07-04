@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/03 16:52:20 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/04 08:18:09 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,13 @@ int						moves_to_top(t_stack_node **stack, int size, int nbr);
 
 // Stack_info functions
 
-t_node_info				*info_init(t_stack_node *stack);
-int						find_bf(t_stack_node **stack_a, t_stack_node **stack_b);
-t_node_info				choose_node(t_stack_node **stack_a,
+t_node_info				*info_init(void);
+int						find_bf(t_stack_node *stack_a, t_stack_node *stack_b);
+t_node_info				*choose_node(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 int						find_a(t_stack_node *stack_a, t_node_info info);
 int						find_b(t_stack_node *stack_b, t_node_info info);
+void					print_node_info(t_node_info info);
 
 // Allowed operations
 
