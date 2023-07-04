@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   stack_dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 11:27:11 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/03 16:46:09 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/04 20:50:50 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/04 20:52:57 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	find_a(t_stack_node *stack_a, t_node_info info)
+int	*stack_dup(t_stack_node *stack)
 {
-	int	bf;
+	int	*array;
+	int	i;
 
-	bf = stack_a->nbr;
-	while (stack_a)
+	i = 0;
+	array = (int *)malloc(sizeof(int) * stack_size(stack));
+	while (stack)
 	{
-		if (stack_a->nbr == info.best_buddy)
-			return (bf);
-		stack_a = stack_a->next;
+		array[i] = stack->nbr;
+		stack = stack->next;
+		i++;
 	}
-	return (0);
-}
-
-int	find_b(t_stack_node *stack_b, t_node_info info)
-{
-	int	nbr;
-
-	nbr = stack_b->nbr;
-	while (stack_b)
-	{
-		if (stack_b->nbr == info.number)
-			return (nbr);
-		stack_b = stack_b->next;
-	}
-	return (0);
+	return (array);
 }

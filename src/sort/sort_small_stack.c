@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 13:59:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 14:54:25 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/04 21:34:09 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ void	sort_small_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 		sort_three_numbers(stack_a);
 	else if (size_a == 4)
 		sort_four_numbers(stack_a, stack_b);
-	else if (size_a == 5)
+	else if (size_a >= 5 && size_a <= 50)
 		sort_five_numbers(stack_a, stack_b);
 }
