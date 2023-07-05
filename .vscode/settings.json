@@ -5,7 +5,10 @@
         "random": "c",
         "type_traits": "c",
         "chrono": "c",
-        "variant": "c"
+        "variant": "c",
+        "limits": "c",
+        "semaphore": "c",
+        "algorithm": "c"
     },
     "editor.indentSize": "tabSize",
     "makefile.launchConfigurations": [

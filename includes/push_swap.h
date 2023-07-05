@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/04 21:26:42 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/05 09:16:10 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,26 @@
 typedef struct s_stack_node
 {
 	int					nbr;
+	int					index;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
+	int					value;
+	int					sa;
+	int					sb;
+	int					ra;
+	int					rb;
+	int					rra;
+	int					rrb;
 }						t_stack_node;
+
+typedef struct s_sequence
+{
+	int					curr_len;
+	int					max_len;
+	int					index;
+	int					max_index;
+	int					start;
+}						t_sequence;
 
 // Push_Swap functions
 
@@ -49,6 +66,7 @@ int						calculate_mean(t_stack_node *stack);
 int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
+void					index_init(t_stack_node *stack);
 
 // Allowed operations
 
@@ -90,5 +108,14 @@ int						*stack_dup(t_stack_node *stack);
 void					swap_arr(int *a, int *b);
 int						partition(int *array, int start, int end);
 void					quicksort(int *array, int start, int end);
+
+// Find sequence functions
+
+t_sequence				*sequence_init(t_sequence *sequence);
+void					create_sequence(t_stack_node *node,
+							t_sequence **sequence, int i, t_stack_node **stack);
+t_sequence				*function_sequence(t_stack_node **stack);
+void					markup_init(t_stack_node **stack_a);
+void					makrup(t_stack_node **stack_a, t_sequence *sequence);
 
 #endif

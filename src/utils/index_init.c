@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_medium_stack.c                                :+:      :+:    :+:   */
+/*   index_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 11:00:14 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/05 09:11:42 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/05 07:01:40 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/05 07:04:52 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_medium_stack(t_stack_node **stack_a, t_stack_node **stack_b)
+void	index_init(t_stack_node *stack)
 {
-	t_sequence	*sequence;
-	int			i;
-	int			size;
+	int				*array;
+	int				i;
+	t_stack_node	*node;
 
-	sequence = function_sequence(stack_a);
-	makrup(stack_a, sequence);
-	free(sequence);
+	array = NULL;
+	array = stack_dup(stack);
+	node = stack;
 	i = 0;
-	size = stack_size(*stack_a);
-	while (i <= size)
+	while (node->next != stack)
 	{
-		if (!((*stack_a)->nbr))
-			pb(stack_a, stack_b);
-		else
-			ra(stack_a);
-		i++;
+		node->index = i++;
+		node = node->next;
 	}
+	node->index = i;
+	quicksort(array, 0, stack_size(stack) - 1);
+	node = stack;
+	free(array);
 }
