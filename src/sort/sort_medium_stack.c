@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:00:14 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 11:04:01 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:04:31 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 
 void	sort_medium_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	int	*arr;
-	int	i;
-
-	i = 0;
-	arr = stack_dup(*stack_a);
-	quicksort(arr, 0, stack_size(*stack_a) - 1);
+	get_rank(stack_a);
+	print_stack(*stack_a);
 	pb(stack_a, stack_b);
 	pa(stack_a, stack_b);
-	while (arr[i])
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
 }
 
-// update the index and divide in 3 
+// update the index and divide in 3

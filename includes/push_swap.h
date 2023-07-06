@@ -6,12 +6,14 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 10:20:04 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/06 20:49:25 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define SPLIT_FACTOR 0.33
 
 # include "../libft/libft.h"
 # include <stdbool.h>
@@ -24,7 +26,7 @@
 typedef struct s_stack_node
 {
 	int					nbr;
-	int					index;
+	int					rank;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }						t_stack_node;
@@ -50,7 +52,7 @@ int						calculate_mean(t_stack_node *stack);
 int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
-void					index_init(t_stack_node *stack);
+void					get_rank(t_stack_node **stack_a);
 
 // Allowed operations
 
@@ -89,7 +91,6 @@ void					sort_big_stack(t_stack_node **stack_a,
 // Array functions
 
 int						*stack_dup(t_stack_node *stack);
-int						size_array(int *array);
 void					swap_arr(int *a, int *b);
 int						partition(int *array, int start, int end);
 void					quicksort(int *array, int start, int end);
