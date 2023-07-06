@@ -8,7 +8,8 @@
         "variant": "c",
         "limits": "c",
         "semaphore": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "array": "c"
     },
     "editor.indentSize": "tabSize",
     "makefile.launchConfigurations": [

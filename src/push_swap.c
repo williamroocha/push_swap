@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/05 07:12:32 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/06 10:52:40 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int ac, char **av)
 		sort_small_stack(&stack_a, &stack_b);
 	else if (stack_size(stack_a) > 50 && stack_size(stack_a) <= 100)
 	{
-		index_init(stack_a);
 		sort_medium_stack(&stack_a, &stack_b);
 	}
 	free(stack_a);
