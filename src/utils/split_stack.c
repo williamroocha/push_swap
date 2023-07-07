@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 08:03:30 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 21:09:51 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/07 08:09:33 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,25 @@ int	get_part_size(t_stack_node *stack)
 
 int	*split_stack(t_stack_node *stack)
 {
-	int	i;
-	int	*arr;
-	int	part1_size;
-	int	part2_size;
-	int	part3_size;
+	int				*arr;
+	t_stack_node	*current;
+	int				i;
 
-	i = 1;
+	i = 0;
 	arr = (int *)malloc(sizeof(int) * 3);
-	part1_size = get_part_size(stack);
-	part2_size = get_part_size(stack);
-	part3_size = stack_size(stack) - part1_size - part2_size;
-	while (i <= stack_size(stack))
+	arr[0] = 0;
+	arr[1] = 0;
+	arr[2] = 0;
+	current = stack;
+	while (current != NULL)
 	{
+		if (current->rank == get_part_size(stack))
+			arr[0] = current->nbr;
+		else if (current->rank == get_part_size(stack) * 2)
+			arr[1] = current->nbr;
+		else if (current->rank == stack_size(stack))
+			arr[2] = current->nbr;
+		current = current->next;
 	}
+	return (arr);
 }

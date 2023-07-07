@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 20:49:25 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/07 09:52:31 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
 void					get_rank(t_stack_node **stack_a);
+int						get_part_size(t_stack_node *stack);
+int						*split_stack(t_stack_node *stack);
 
 // Allowed operations
 
@@ -86,6 +88,8 @@ void					sort_five_numbers(t_stack_node **stack_a,
 void					sort_medium_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					sort_big_stack(t_stack_node **stack_a,
+							t_stack_node **stack_b);
+void					pb_two_smallparts(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 
 // Array functions
