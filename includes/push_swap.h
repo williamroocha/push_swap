@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/07 09:52:31 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:18:31 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void					sort_medium_stack(t_stack_node **stack_a,
 void					sort_big_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					pb_two_smallparts(t_stack_node **stack_a,
+							t_stack_node **stack_b);
+void					aux_sort(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 
 // Array functions

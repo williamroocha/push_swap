@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 08:03:30 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/07 08:09:33 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/07 20:57:57 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	*split_stack(t_stack_node *stack)
 {
 	int				*arr;
 	t_stack_node	*current;
-	int				i;
 
-	i = 0;
 	arr = (int *)malloc(sizeof(int) * 3);
 	arr[0] = 0;
 	arr[1] = 0;
