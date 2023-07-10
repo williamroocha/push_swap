@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   update_moves_to_top.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/10 17:19:55 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/10 10:07:07 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/10 16:16:13 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack_node *stack)
+void	update_moves_to_top(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node	*current;
+	t_stack_node	*current_a;
+	t_stack_node	*current_b;
 
-	current = stack;
-	while (current != NULL)
+	current_a = *stack_a;
+	current_b = *stack_b;
+	while (current_a != NULL)
 	{
-		ft_putstr_fd("nbr -> ", 1);
-		ft_putnbr_fd(current->nbr, 1);
-		ft_putstr_fd("\n", 1);
-		printf("bf -> %d\n", current->bf);
-		printf("bf_rank -> %d\n", current->bf_rank);
-		printf("nbr moves to top -> %d\n", current->nbr_move_to_top);
-		ft_putstr_fd("\n", 1);
-		current = current->next;
+		current_a->nbr_move_to_top = moves_to_top(stack_a, current_a->nbr);
+		current_a = current_a->next;
 	}
-	ft_putstr_fd("\n", 1);
+	while (current_b != NULL)
+	{
+		current_b->nbr_move_to_top = moves_to_top(stack_b, current_b->nbr);
+		current_b = current_b->next;
+	}
 }
-
-// Path: src/utils/print_stack.c

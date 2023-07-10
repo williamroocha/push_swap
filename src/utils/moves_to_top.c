@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   moves_to_top.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/10 17:19:55 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/10 09:35:25 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/10 09:49:56 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack_node *stack)
+int	moves_to_top(t_stack_node **stack, int nbr)
 {
-	t_stack_node	*current;
+	int	count;
+	int	size;
+	int	index;
 
-	current = stack;
-	while (current != NULL)
+	count = 0;
+	size = stack_size(*stack);
+	index = get_index(*stack, nbr);
+	if ((size / 2) >= index)
 	{
-		ft_putstr_fd("nbr -> ", 1);
-		ft_putnbr_fd(current->nbr, 1);
-		ft_putstr_fd("\n", 1);
-		printf("bf -> %d\n", current->bf);
-		printf("bf_rank -> %d\n", current->bf_rank);
-		printf("nbr moves to top -> %d\n", current->nbr_move_to_top);
-		ft_putstr_fd("\n", 1);
-		current = current->next;
+		while (index > 0)
+		{
+			count++;
+			index--;
+		}
 	}
-	ft_putstr_fd("\n", 1);
+	else
+	{
+		while (size > index)
+		{
+			count++;
+			index++;
+		}
+	}
+	return (count);
 }
-
-// Path: src/utils/print_stack.c

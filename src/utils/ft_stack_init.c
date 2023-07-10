@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 19:39:01 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:19:42 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	ft_stack_init(char **av, t_stack_node **stack_a)
 	{
 		newnode = ft_newnode(ft_atoi(*av));
 		newnode->rank = 1;
+		newnode->nbr_move_to_top = 0;
+		newnode->bf = 0;
+		newnode->bf_rank = 0;
 		ft_addnode_back(stack_a, newnode);
 		av++;
 	}

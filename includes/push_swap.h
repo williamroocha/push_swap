@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/07 21:18:31 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:20:16 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # define SPLIT_FACTOR 0.33
+# define INT_MAX 2147483647
 
 # include "../libft/libft.h"
 # include <stdbool.h>
@@ -27,6 +28,9 @@ typedef struct s_stack_node
 {
 	int					nbr;
 	int					rank;
+	int					nbr_move_to_top;
+	int					bf;
+	int					bf_rank;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }						t_stack_node;
@@ -55,6 +59,8 @@ void					put_top_b(t_stack_node **stack_b, int i);
 void					get_rank(t_stack_node **stack_a);
 int						get_part_size(t_stack_node *stack);
 int						*split_stack(t_stack_node *stack);
+void					get_bf(t_stack_node **stack_a, t_stack_node **stack_b);
+int						moves_to_top(t_stack_node **stack, int nbr);
 
 // Allowed operations
 
@@ -91,7 +97,11 @@ void					sort_big_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					pb_two_smallparts(t_stack_node **stack_a,
 							t_stack_node **stack_b);
+void					find_best_buddy(t_stack_node **stack_a,
+							t_stack_node **stack_b);
 void					aux_sort(t_stack_node **stack_a,
+							t_stack_node **stack_b);
+void					update_moves_to_top(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 
 // Array functions
