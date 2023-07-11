@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:31:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/10 16:31:54 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:47:50 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	find_best_buddy(t_stack_node **stack_a, t_stack_node **stack_b)
 {
+	t_stack_node	*current_a;
 	t_stack_node	*current_b;
 	t_stack_node	*best_friend;
-	t_stack_node	*current_a;
 
 	current_b = *stack_b;
 	while (current_b != NULL)
@@ -36,6 +36,7 @@ void	find_best_buddy(t_stack_node **stack_a, t_stack_node **stack_b)
 		{
 			current_b->bf = best_friend->nbr;
 			current_b->bf_rank = best_friend->rank;
+			current_b->bf_moves_to_top = best_friend->nbr_moves_to_top;
 		}
 		current_b = current_b->next;
 	}

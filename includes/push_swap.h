@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/10 17:20:16 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:58:44 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ typedef struct s_stack_node
 {
 	int					nbr;
 	int					rank;
-	int					nbr_move_to_top;
+	int					nbr_moves_to_top;
 	int					bf;
 	int					bf_rank;
+	int					bf_moves_to_top;
+	int					cost;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }						t_stack_node;
@@ -43,6 +45,7 @@ int						main(int ac, char **av);
 
 void					ft_stack_init(char **av,
 							t_stack_node **stack_a);
+void					reset_bf(t_stack_node **stack);
 t_stack_node			*ft_newnode(int nbr);
 void					ft_addnode_back(t_stack_node **head,
 							t_stack_node *node);
@@ -61,6 +64,7 @@ int						get_part_size(t_stack_node *stack);
 int						*split_stack(t_stack_node *stack);
 void					get_bf(t_stack_node **stack_a, t_stack_node **stack_b);
 int						moves_to_top(t_stack_node **stack, int nbr);
+void					update_cost(t_stack_node **stack_);
 
 // Allowed operations
 
