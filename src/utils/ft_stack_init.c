@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/11 07:33:24 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 11:00:08 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	reset_bf(t_stack_node **stack)
 		current->cost = 0;
 		current = current->next;
 	}
+	free(current);
 }
 
 // Fill the stack_A with the numbers from the arguments

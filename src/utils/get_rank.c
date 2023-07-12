@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:10:39 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 20:19:39 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 10:41:08 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ void	get_rank(t_stack_node **stack_a)
 		}
 		i++;
 	}
+	free(arr);
+	free(current);
 }
