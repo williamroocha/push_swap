@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 09:34:45 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 20:42:08 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int						*split_stack(t_stack_node *stack);
 void					get_bf(t_stack_node **stack_a, t_stack_node **stack_b);
 int						moves_to_top(t_stack_node **stack, int nbr);
 void					update_cost(t_stack_node **stack_);
+void					clear_stack(t_stack_node **stack);
 
 // Allowed operations
 
