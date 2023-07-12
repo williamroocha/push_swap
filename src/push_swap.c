@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 08:03:11 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:42:08 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int ac, char **av)
 	{
 		sort_medium_stack(&stack_a, &stack_b);
 	}
+	if (a_is_sorted(stack_a))
+		printf("Essa merda ta sorteada\n");
 	free(stack_a);
 	free(stack_b);
 	return (0);

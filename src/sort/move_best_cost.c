@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   move_best_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 18:11:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 09:25:00 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/12 09:02:02 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/12 09:02:23 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack_node *stack)
+void	move_best_cost(t_stack_node **stack_a, t_stack_node **stack_b)
 {
+	t_stack_node	*best_cost;
 	t_stack_node	*current;
 
-	current = stack;
+	best_cost = *stack_b;
+	current = *stack_b;
 	while (current != NULL)
 	{
-		ft_putstr_fd("nbr -> ", 1);
-		ft_putnbr_fd(current->nbr, 1);
-		ft_putstr_fd("\n", 1);
-		printf("bf -> %d\n", current->bf);
-		printf("bf_rank -> %d\n", current->bf_rank);
-		printf("nbr moves to top -> %d\n", current->nbr_moves_to_top);
-		printf("bf moves to top -> %d\n", current->bf_moves_to_top);
-		printf("cost -> %d\n", current->cost);
-		ft_putstr_fd("\n", 1);
+		if (current->cost < best_cost->cost)
+			best_cost = current;
 		current = current->next;
 	}
-	ft_putstr_fd("\n", 1);
+	if (best_cost->cost == 0)
+		pa(stack_a, stack_b);
+	else if (best_cost->cost > 0)
+	{
+		put_top_a(stack_a, get_index(*stack_a, best_cost->bf));
+		put_top_b(stack_b, get_index(*stack_b, best_cost->nbr));
+		pa(stack_a, stack_b);
+	}
 }
-
-// Path: src/utils/print_stack.c

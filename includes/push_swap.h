@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/11 07:58:44 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:34:45 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,11 @@ void					pb_two_smallparts(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					find_best_buddy(t_stack_node **stack_a,
 							t_stack_node **stack_b);
-void					aux_sort(t_stack_node **stack_a,
-							t_stack_node **stack_b);
 void					update_moves_to_top(t_stack_node **stack_a,
 							t_stack_node **stack_b);
+void					move_best_cost(t_stack_node **stack_a,
+							t_stack_node **stack_b);
+void					last_rotate(t_stack_node **stack_a);
 
 // Array functions
 
