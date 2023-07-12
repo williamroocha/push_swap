@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 13:59:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/10 14:03:04 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/12 07:44:03 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	sort_five_numbers(t_stack_node **stack_a, t_stack_node **stack_b)
 		pb(stack_a, stack_b);
 	}
 	sort_three_numbers(stack_a);
-	while (stack_size(*stack_b) > 0)
+	while (stack_size(*stack_a) != 5)
 		pa(stack_a, stack_b);
 }
 
