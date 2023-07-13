@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:18:20 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:18:03 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/13 23:07:43 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sort_selector(t_stack_node **stack_a, t_stack_node **stack_b)
 		return ;
 	}
 	size = stack_size(*stack_a);
-	if (size < 3 && (check_if_sorted(*stack_a)))
+	if (size < 3 && (!check_if_sorted(*stack_a)))
 		sa(stack_a);
 	else if (size == 3)
 		sort_three_numbers(stack_a);
