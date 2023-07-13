@@ -6,14 +6,14 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 20:42:08 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:16:36 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define SPLIT_FACTOR 0.33
+# define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
 # include "../libft/libft.h"
@@ -50,7 +50,6 @@ t_stack_node			*ft_newnode(int nbr);
 void					ft_addnode_back(t_stack_node **head,
 							t_stack_node *node);
 int						stack_size(t_stack_node *stack);
-bool					a_is_sorted(t_stack_node *stack_a);
 void					print_stack(t_stack_node *stack);
 int						find_mid_value(t_stack_node *stack);
 int						find_min_value(t_stack_node *stack);
@@ -66,6 +65,13 @@ void					get_bf(t_stack_node **stack_a, t_stack_node **stack_b);
 int						moves_to_top(t_stack_node **stack, int nbr);
 void					update_cost(t_stack_node **stack_);
 void					clear_stack(t_stack_node **stack);
+
+// Check functions
+void					check_duplicates(char **av);
+void					check_non_integers(char **av);
+void					check_limits(char **av);
+void					check_errors(char **av);
+bool					check_if_sorted(t_stack_node *stack_a);
 
 // Allowed operations
 
@@ -89,6 +95,8 @@ void					swap(t_stack_node **stack);
 
 // Sort Algorithms
 
+void					sort_selector(t_stack_node **stack_a,
+							t_stack_node **stack_b);
 void					sort_small_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					sort_three_numbers(t_stack_node **stack_a);

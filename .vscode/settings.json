@@ -9,7 +9,8 @@
         "limits": "c",
         "semaphore": "c",
         "algorithm": "c",
-        "array": "c"
+        "array": "c",
+        "libft.h": "c"
     },
     "editor.indentSize": "tabSize",
     "makefile.launchConfigurations": [

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_if_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:07:38 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/12 10:37:13 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/13 22:16:02 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+bool	check_if_sorted(t_stack_node *stack_a)
 {
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	t_stack_node	*current;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (ac < 2)
-		return (0);
-	check_errors(av);
-	ft_stack_init(av, &stack_a);
-	sort_selector(&stack_a, &stack_b);
-	clear_stack(&stack_a);
-	clear_stack(&stack_b);
-	return (0);
+	current = stack_a;
+	while (current && current->next)
+	{
+		if (current->nbr > current->next->nbr)
+			return (false);
+		current = current->next;
+	}
+	return (true);
 }
 
-// Path: src/push_swap.c
+// Path: src/utils/a_is_sorted.c

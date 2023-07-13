@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_is_sorted.c                                      :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 10:37:13 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/14 11:08:53 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/13 21:58:29 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/13 22:01:55 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-bool	a_is_sorted(t_stack_node *stack_a)
+long long	ft_atoll(const char *str)
 {
-	t_stack_node	*current;
+	int			i;
+	int			sign;
+	long long	result;
 
-	current = stack_a;
-	while (current && current->next)
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
 	{
-		if (current->nbr > current->next->nbr)
-			return (false);
-		current = current->next;
+		sign = -sign;
+		i++;
 	}
-	return (true);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10;
+		result += str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }
-
-// Path: src/utils/a_is_sorted.c

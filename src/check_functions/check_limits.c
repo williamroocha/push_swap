@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_limits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:07:38 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/13 20:52:53 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/13 21:59:33 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	check_limits(char **av)
 {
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	int			i;
+	long long	num;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (ac < 2)
-		return (0);
-	check_errors(av);
-	ft_stack_init(av, &stack_a);
-	sort_selector(&stack_a, &stack_b);
-	clear_stack(&stack_a);
-	clear_stack(&stack_b);
-	return (0);
+	i = 1;
+	while (av[i] != NULL)
+	{
+		num = ft_atoll(av[i]);
+		if (num > INT_MAX || num < INT_MIN)
+		{
+			ft_putstr_fd("Error\n", 1);
+			exit(0);
+		}
+		i++;
+	}
 }
-
-// Path: src/push_swap.c

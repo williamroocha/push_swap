@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 10:12:52 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/04/21 08:32:34 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:02:18 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+long long			ft_atoll(const char *str);
 
 int					ft_toupper(int c);
 int					ft_tolower(int c);

@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:00:14 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 09:40:32 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:17:06 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ void	sort_medium_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 		else if ((*stack_a)->nbr >= mean)
 			ra(stack_a);
 	}
-	sort_small_stack(stack_a, stack_b);
+	sort_five_numbers(stack_a, stack_b);
 	while (*stack_b != NULL)
 	{
 		update_moves_to_top(stack_a, stack_b);
 		find_best_buddy(stack_a, stack_b);
 		update_cost(stack_b);
 		move_best_cost(stack_a, stack_b);
+		reset_bf(stack_a);
 	}
-	if (!a_is_sorted(*stack_a))
+	if (!check_if_sorted(*stack_a))
 	{
 		last_rotate(stack_a);
 	}

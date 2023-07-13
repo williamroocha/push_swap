@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_non_integers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:07:38 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/13 20:08:35 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/13 20:09:02 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	check_non_integers(char **av)
 {
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	int	i;
+	int	j;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (ac < 2)
-		return (0);
-	check_errors(av);
-	ft_stack_init(av, &stack_a);
-	sort_selector(&stack_a, &stack_b);
-	clear_stack(&stack_a);
-	clear_stack(&stack_b);
-	return (0);
+	i = 1;
+	while (av[i] != NULL)
+	{
+		j = 0;
+		if (av[i][j] == '-')
+			j++;
+		while (av[i][j] != '\0')
+		{
+			if (av[i][j] < '0' || av[i][j] > '9')
+			{
+				ft_putstr_fd("Error\n", 1);
+				exit(0);
+			}
+			j++;
+		}
+		i++;
+	}
 }
-
-// Path: src/push_swap.c

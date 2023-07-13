@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 13:59:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 07:44:03 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:19:19 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_three_numbers(t_stack_node **stack_a)
 	max = find_max_value(*stack_a);
 	i_min = get_index(*stack_a, min);
 	i_max = get_index(*stack_a, max);
-	if (i_min == 0 && (!a_is_sorted(*stack_a)))
+	if (i_min == 0 && (!check_if_sorted(*stack_a)))
 	{
 		sa(stack_a);
 		ra(stack_a);
@@ -69,19 +69,4 @@ void	sort_five_numbers(t_stack_node **stack_a, t_stack_node **stack_b)
 	sort_three_numbers(stack_a);
 	while (stack_size(*stack_a) != 5)
 		pa(stack_a, stack_b);
-}
-
-void	sort_small_stack(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	int	size_a;
-
-	size_a = stack_size(*stack_a);
-	if (size_a < 3 && (!a_is_sorted(*stack_a)))
-		sa(stack_a);
-	else if (size_a == 3)
-		sort_three_numbers(stack_a);
-	else if (size_a == 4)
-		sort_four_numbers(stack_a, stack_b);
-	else if (size_a >= 5 && size_a <= 10)
-		sort_five_numbers(stack_a, stack_b);
 }

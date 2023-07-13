@@ -10,6 +10,7 @@ OBJ_DIR = obj
 SRC = $(wildcard $(SRC_DIR)/operations/*.c) \
 	$(wildcard $(SRC_DIR)/sort/*.c) \
 	$(wildcard $(SRC_DIR)/utils/*.c) \
+	$(wildcard $(SRC_DIR)/check_functions/*.c) \
 	$(SRC_DIR)/push_swap.c
 
 OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))

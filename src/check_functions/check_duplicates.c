@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_mid_value.c                                   :+:      :+:    :+:   */
+/*   check_duplicates.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 20:27:48 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/04 21:06:40 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/13 20:04:24 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/13 20:26:18 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	find_mid_value(t_stack_node *stack)
+void	check_duplicates(char **av)
 {
-	int	mid;
 	int	i;
-	int	*array;
+	int	j;
 
-	array = stack_dup(stack);
-	i = stack_size(stack);
-	quicksort(array, 0, i - 1);
-	mid = array[i / 2];
-	free(array);
-	return (mid);
+	i = 1;
+	while (av[i] != NULL)
+	{
+		j = i + 1;
+		while (av[j] != NULL)
+		{
+			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			{
+				ft_putstr_fd("Error\n", 1);
+				exit(0);
+			}
+			j++;
+		}
+		i++;
+	}
 }
