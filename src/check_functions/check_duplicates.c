@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:04:24 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 20:26:18 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/17 11:40:32 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_duplicates(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_putstr_fd("Error\n", 1);
+				ft_putstr_fd("Error\n", 2);
 				exit(0);
 			}
 			j++;

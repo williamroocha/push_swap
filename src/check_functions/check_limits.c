@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:52:53 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 21:59:33 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/17 11:40:21 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_limits(char **av)
 		num = ft_atoll(av[i]);
 		if (num > INT_MAX || num < INT_MIN)
 		{
-			ft_putstr_fd("Error\n", 1);
+			ft_putstr_fd("Error\n", 2);
 			exit(0);
 		}
 		i++;
