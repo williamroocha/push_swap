@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   calculate_mean.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 20:40:33 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 20:42:39 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/06/20 10:50:50 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/18 20:32:38 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	clear_stack(t_stack_node **stack)
-{
-	t_stack_node	*current;
-	t_stack_node	*next;
+// Calculate the mean value of the stack
 
-	current = *stack;
-	while (current != NULL)
+int	calculate_mean(t_stack_node *stack)
+{
+	int				sum;
+	int				count;
+	t_stack_node	*current;
+
+	sum = 0;
+	count = 0;
+	current = stack;
+	while (current)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		sum += current->nbr;
+		count++;
+		current = current->next;
 	}
-	*stack = NULL;
+	if (count == 0)
+		return (0);
+	return (sum / count);
 }

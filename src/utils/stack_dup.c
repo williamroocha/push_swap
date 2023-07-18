@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 20:50:50 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/04 20:52:57 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:50:27 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Make an array from the stack
 
 int	*stack_dup(t_stack_node *stack)
 {

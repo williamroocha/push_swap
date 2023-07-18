@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_cost.c                                   :+:      :+:    :+:   */
+/*   clear_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 15:16:21 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 15:26:48 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/12 20:40:33 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/18 20:43:45 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/* This function returns the number of moves
-required to put an element on the top of the stack. */
+// Free the stack
 
-int	calculate_cost(int size, int i)
+void	clear_stack(t_stack_node **stack)
 {
-	int	counter;
+	t_stack_node	*current;
+	t_stack_node	*next;
 
-	counter = 0;
-	if (i <= (size / 2))
+	current = *stack;
+	while (current != NULL)
 	{
-		counter = i;
+		next = current->next;
+		free(current);
+		current = next;
 	}
-	else if (i > (size / 2))
-		counter = size - i;
-	return (counter);
+	*stack = NULL;
 }

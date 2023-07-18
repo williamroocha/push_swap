@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:18:20 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 23:07:43 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:39:39 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Select the sorting algorithm based on the size of the stack
 
 void	sort_selector(t_stack_node **stack_a, t_stack_node **stack_b)
 {

@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:02:02 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 09:02:23 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:38:30 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Prepare the stacks and move the node with best cost to stack_a
 
 void	move_best_cost(t_stack_node **stack_a, t_stack_node **stack_b)
 {

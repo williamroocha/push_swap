@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:00:14 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:17:06 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:38:49 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Sort a stack with more than 5 numbers
 
 void	sort_medium_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {

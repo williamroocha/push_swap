@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 20:56:28 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/06 10:08:11 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:50:01 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Sort an array of integers
 
 void	swap_arr(int *a, int *b)
 {

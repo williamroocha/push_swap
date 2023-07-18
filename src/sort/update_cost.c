@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 07:53:20 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/11 07:58:03 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:41:25 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Update the cost to move the number and the best friend to the top of the stack
 
 void	update_cost(t_stack_node **stack_)
 {

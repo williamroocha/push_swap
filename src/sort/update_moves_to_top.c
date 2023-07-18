@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 10:07:07 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/11 07:25:09 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:41:49 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Update the number of moves to top for each element of the stack
 
 void	update_moves_to_top(t_stack_node **stack_a, t_stack_node **stack_b)
 {

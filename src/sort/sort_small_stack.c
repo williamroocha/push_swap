@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 13:59:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:19:19 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:40:21 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Sort stacks with 3, 4 or 5 numbers
 
 void	sort_three_numbers(t_stack_node **stack_a)
 {

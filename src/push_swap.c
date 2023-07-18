@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:06:43 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:43:13 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:52:44 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+// Push swap main function
 
 int	main(int ac, char **av)
 {
@@ -28,5 +30,3 @@ int	main(int ac, char **av)
 	clear_stack(&stack_b);
 	return (0);
 }
-
-// Path: src/push_swap.c

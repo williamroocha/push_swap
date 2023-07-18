@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 12:18:58 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 12:54:41 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:49:03 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Put the element at the top of the stack
 
 void	put_top_a(t_stack_node **stack_a, int i)
 {

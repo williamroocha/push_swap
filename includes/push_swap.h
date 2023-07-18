@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:43:49 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:16:36 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:30:01 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void					print_stack(t_stack_node *stack);
 int						find_mid_value(t_stack_node *stack);
 int						find_min_value(t_stack_node *stack);
 int						find_max_value(t_stack_node *stack);
-int						calculate_mean(t_stack_node *stack);
 int						get_index(t_stack_node *stack, int nbr);
 void					put_top_a(t_stack_node **stack_a, int i);
 void					put_top_b(t_stack_node **stack_b, int i);
@@ -106,10 +105,7 @@ void					sort_five_numbers(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					sort_medium_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
-void					sort_big_stack(t_stack_node **stack_a,
-							t_stack_node **stack_b);
-void					pb_two_smallparts(t_stack_node **stack_a,
-							t_stack_node **stack_b);
+int						calculate_mean(t_stack_node *stack);
 void					find_best_buddy(t_stack_node **stack_a,
 							t_stack_node **stack_b);
 void					update_moves_to_top(t_stack_node **stack_a,

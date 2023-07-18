@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 12:06:25 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/06/21 12:11:18 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:46:54 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Get the index of a number in the stack
 
 int	get_index(t_stack_node *stack, int nbr)
 {

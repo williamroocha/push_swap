@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:10:39 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 10:41:08 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:47:18 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Get the final position of a number in the stack
 
 void	get_rank(t_stack_node **stack_a)
 {

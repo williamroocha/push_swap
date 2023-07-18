@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:37:13 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/13 22:16:02 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:23:30 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Check if the stack is sorted
 
 bool	check_if_sorted(t_stack_node *stack_a)
 {
@@ -26,4 +28,3 @@ bool	check_if_sorted(t_stack_node *stack_a)
 	return (true);
 }
 
-// Path: src/utils/a_is_sorted.c

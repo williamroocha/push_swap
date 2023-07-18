@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:08:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/17 11:40:06 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:24:33 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Check if the input is a number
 
 void	check_non_integers(char **av)
 {

@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:35:51 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 09:40:11 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:34:06 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Rotate the stack until the minimum value is at the top
 
 void	last_rotate(t_stack_node **stack_a)
 {

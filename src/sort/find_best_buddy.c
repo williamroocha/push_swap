@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:31:15 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/12 08:57:56 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:33:37 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Find in the stack A the best buddy for each element of the stack B
 
 void	find_best_buddy(t_stack_node **stack_a, t_stack_node **stack_b)
 {

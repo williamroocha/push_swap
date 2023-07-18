@@ -6,11 +6,13 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:52:53 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/17 11:40:21 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:24:05 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Check if the input is within the limits of an integer
 
 void	check_limits(char **av)
 {
