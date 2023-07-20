@@ -35,6 +35,7 @@ $(addprefix $(SRC_DIR)/utils/, \
 	ft_stack_init.c \
 	moves_to_top.c \
 	stack_size.c \
+	reset_bf.c \
 ) \
 $(addprefix $(SRC_DIR)/check_functions/, \
 	check_duplicates.c \

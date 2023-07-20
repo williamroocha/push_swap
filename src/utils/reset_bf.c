@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_non_integers.c                               :+:      :+:    :+:   */
+/*   reset_bf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 20:08:35 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/19 18:18:30 by wiferrei         ###   ########.fr       */
+/*   Created: 2023/07/19 10:29:00 by wiferrei          #+#    #+#             */
+/*   Updated: 2023/07/19 18:19:33 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-// Check if the input is a number
+// reset the values of the stack
 
-void	check_non_integers(char **av)
+void	reset_bf(t_stack_node **stack)
 {
-	int	i;
-	int	j;
+	t_stack_node	*current;
 
-	i = 1;
-	while (av[i] != NULL)
+	current = *stack;
+	while (current != NULL)
 	{
-		j = 0;
-		if (av[i][j] == '-' || av[i][j] == '+')
-			j++;
-		if (av[i][j] == '\0')
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit(0);
-		}
-		while (av[i][j] != '\0')
-		{
-			if (av[i][j] < '0' || av[i][j] > '9')
-			{
-				ft_putstr_fd("Error\n", 2);
-				exit(0);
-			}
-			j++;
-		}
-		i++;
+		current->nbr_moves_to_top = 0;
+		current->bf = 0;
+		current->bf_rank = 0;
+		current->bf_moves_to_top = 0;
+		current->cost = 0;
+		current = current->next;
 	}
+	free(current);
 }

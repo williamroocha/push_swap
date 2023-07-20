@@ -6,30 +6,11 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 08:32:27 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/18 20:46:25 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/19 10:29:34 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-// reset the values of the stack
-
-void	reset_bf(t_stack_node **stack)
-{
-	t_stack_node	*current;
-
-	current = *stack;
-	while (current != NULL)
-	{
-		current->nbr_moves_to_top = 0;
-		current->bf = 0;
-		current->bf_rank = 0;
-		current->bf_moves_to_top = 0;
-		current->cost = 0;
-		current = current->next;
-	}
-	free(current);
-}
 
 // Fill the stack_A with the numbers from the arguments
 
