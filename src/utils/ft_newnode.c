@@ -6,7 +6,7 @@
 /*   By: wiferrei <wiferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 08:11:03 by wiferrei          #+#    #+#             */
-/*   Updated: 2023/07/18 20:44:39 by wiferrei         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:03:48 by wiferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ t_stack_node	*ft_newnode(int nbr)
 	node->next = NULL;
 	return (node);
 }
-
-// Path: src/utils/ft_newnode.c
