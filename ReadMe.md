@@ -2,7 +2,7 @@
 
 ![Project Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
-![push_swap](https://imgur.com/QlUdBJ5)
+![push_swap](./p_s.gif)
 
 ## Description
 
