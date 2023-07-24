@@ -4,8 +4,6 @@
 
 ## Description
 
-## The problem
-
 The idea is simple, You have two stacks called Stack A and Stack B. Stack A is given a random list of unorganized numbers. You must take the random list of numbers in Stack A and sort them so that Stack A is organized from smallest to largest. There are only a few moves you’re allowed to used to manipulate the stacks that we’re going to call “operations”. The main goal of this project is to organize Stack A in as few actions as possible.The operations allowed for this task are described as follows:
 
 - **`sa`** : **swap a** - Swap the first 2 elements at the top of stack A. Do nothing if there is only one or no elements).
@@ -42,18 +40,20 @@ The idea is simple, You have two stacks called Stack A and Stack B. Stack A is g
 
 1. Clone the repository:
 
-https://github.com/williamroocha/push_swap.git
-
+```sh
+git clone https://github.com/williamroocha/push_swap.git
+```
 
 2. Navigate to the project directory:
 
+```sh
 cd push_swap
-
+```
 
 3. Compile the project:
-
+```sh
 make
-
+```
 
 ## Usage
 
@@ -86,11 +86,14 @@ The checker will validate whether the stack is sorted correctly after executing 
    - Perform a series of operations to bring the best friend of each number to the top of stack A.
 6. Combine the two stacks to have a fully sorted stack A.
 
+## Tools
+
+I can’t recommend this push_swap visualizer enough. This tool was made for push_swap and it really helped me optimize my code.
+
+https://github.com/o-reo/push_swap_visualizer
+
 
 ## Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to open an issue or create a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
