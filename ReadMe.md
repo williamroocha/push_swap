@@ -58,17 +58,18 @@ make
 ## Usage
 
 Once the project is compiled, you can use it to sort a list of integers. Here's how to run the program:
-
+```sh
 ./push_swap arg1 arg2 arg3 ...
-
+```
 
 Replace `arg1`, `arg2`, etc., with the integers you want to sort.
 
 The program will output a series of instructions (swap, rotate, reverse rotate, etc.) to sort the stack. You can use these instructions to sort the stack manually or use the provided checker program.
 
 To use the checker program, pipe the output of push_swap to it:
-
+```sh
 ./push_swap arg1 arg2 arg3 ... | ./checker_linux arg1 arg2 arg3 ...
+```
 
 
 The checker will validate whether the stack is sorted correctly after executing the instructions.
