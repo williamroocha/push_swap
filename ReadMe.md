@@ -2,7 +2,10 @@
 
 ![Project Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
-![push_swap](./p_s.gif)
+<div style="display: flex; justify-content: center;">
+  <img src="./p_s.gif" alt="push_swap GIF">
+</div>
+
 
 ## Description
 
